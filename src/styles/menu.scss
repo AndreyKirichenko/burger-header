@@ -1,0 +1,29 @@
+.menu {
+  background-color: inherit;
+  overflow: hidden;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    text-align: left;
+  }
+}
+
+.menu__item {
+  @media (min-width: $tablet) {
+    display: inline-block;
+  }
+}
+
+.menu__link {
+  cursor: pointer;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 20px 16px;
+
+  &:hover {
+    color: #888;
+  }
+}
