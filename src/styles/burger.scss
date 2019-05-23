@@ -1,3 +1,56 @@
 .burger {
+  align-items: center;
   background-color: inherit;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  min-height: 56px;
+  min-width: 56px;
+}
+
+.burger__icon,
+.burger__icon:before,
+.burger__icon:after {
+  background-color: #fff;
+  display: block;
+  height: 2px;
+  width: 20px;
+}
+
+.burger__icon {
+  position: relative;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    transition: transform 0.2s ease, top 0.2s ease, bottom 0.2s ease;
+  }
+
+  &:before {
+    top: -6px;
+  }
+
+  &:after {
+    bottom: -6px;
+  }
+
+  .burger--active & {
+    background-color: transparent;
+
+    &:before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+      bottom: 0;
+    }
+  }
+
+  .burger:hover & {
+    transform: scale(1.2, 1.2);
+  }
 }

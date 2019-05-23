@@ -1,5 +1,53 @@
 .header {
   align-items: center;
   background-color: #333;
+  height: 56px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header__logo {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  padding: 0 10px;
+  z-index: 1;
+}
+
+.header__menu {
+  align-items: center;
+  background-color: #333;
+  left: 0;
+  height: 100vh;
+  order: 1;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translateY(-100vh);
+  transition: transform 0.25s ease;
+
+  @media (min-width: $tablet) {
+    flex-grow: 1;
+    height: auto;
+    justify-content: flex-end;
+    order: 0;
+    position: static;
+    transform: translateY(0);
+    width: auto;
+  }
+}
+
+.header__menu--active {
+  transform: translateY(0);
+}
+
+.header__burger {
+  z-index: 1;
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
 }
